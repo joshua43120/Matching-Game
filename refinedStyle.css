@@ -1,0 +1,50 @@
+* { padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+     }
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url(images/background2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.board {
+    width: 1200px;
+    height: 640px; 
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    
+}
+.boxes {
+    height: calc(33.333% - 50px);
+    width: calc(16.666% - 50px);
+    margin: 25px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+.boxes :active{
+    transform: scale(0.93);
+    transition: transform 0.3s;
+}
+.boxes.flip {
+    transform: rotateY(180deg);
+}
+.front_face, 
+.back_face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background:  rgb(206, 175, 2);
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+.front_face {
+    backface-visibility: visible;
+}
